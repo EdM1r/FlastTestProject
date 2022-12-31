@@ -1,1 +1,3 @@
-# FlastTestProject
+# FlaskTestProject
+
+Test learing project. 

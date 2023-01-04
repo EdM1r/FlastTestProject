@@ -15,7 +15,7 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r>' % self.id
 
-
+db.create_all()
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -25,12 +25,12 @@ def index():
 
         try:
             db.session.add(new_task)
-            db.session.commit
+            db.session.commit()
             return redirect('/')
         except:
             return 'There was an issue adding your task'
 
-
+    # шота нихуя этот кусок кода не работает, нужно понять, почему 
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks=tasks)

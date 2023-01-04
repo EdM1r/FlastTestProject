@@ -30,7 +30,6 @@ def index():
         except:
             return 'There was an issue adding your task'
 
-    # шота нихуя этот кусок кода не работает, нужно понять, почему 
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks=tasks)
